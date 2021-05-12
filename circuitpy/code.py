@@ -1,10 +1,13 @@
-# SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
-# SPDX-License-Identifier: MIT
+#
+#   code.py
+#   This is the main body of the time_zone_clocks project.
+#   Copyright (c) 2021 NiftyK
+#   All Rights Reserved
+#
+#   Place this along with the lib directory directly into the CIRCUITPY
+#   folder mounted when a Feather M4 is connected via USB
+#
 
-"""
-This test will initialize the display using displayio and draw a solid green
-background, a smaller purple rectangle, and some yellow text.
-"""
 import time
 import board
 import busio
@@ -19,8 +22,6 @@ class Point:
     def __init__(self, in_x: int, in_y: int):
         self.x = in_x
         self.y = in_y
-        self.cos_cache = {}  # (angle, cos)
-        self.sin_cache = {}  # (angle, sin)
 
     def rotate(self, in_angle:float, in_rot_center: "Point"):
         s = math.sin(math.radians(in_angle))
